@@ -47,13 +47,13 @@ input:active[type=button] {
   opacity: 0;
   transition: -5;
 }
-
 #function-key {
   padding: 5px 5px 5px 5px;
   height: 70px;
   background-color: rgb(137, 130, 130);
   border: none;
   cursor: pointer;
+  margin-left:5px;
 }
 
 input[type="button"]:hover {

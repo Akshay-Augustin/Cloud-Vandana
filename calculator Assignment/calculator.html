@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <table class="calculator">
+    <tr>
+      <td colspan="3">
+        <input class="display-box" type="text" id="result">
+      </td>
+      <td>
+        <input type="button" value="AC" onclick="clearscreen()" class="ac" style="height: 53px;">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="button" value="9" onclick="display('9')">
+      </td>
+      <td>
+        <input type="button" value="8" onclick="display('8')">
+      </td>
+      <td>
+        <input type="button" value="7" onclick="display('7')">
+      </td>
+      <td>
+        <div>
+          <input type="button" value="+" onclick="display('+')" id="function-key">
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="button" value="4" onclick="display('4')">
+      </td>
+      <td>
+        <input type="button" value="5" onclick="display('5')">
+      </td>
+      <td>
+        <input type="button" value="6" onclick="display('6')">
+      </td>
+      <td>
+        <div>
+          <input type="button" value="-" onclick="display('-')" id="function-key">
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="button" value="1" onclick="display('1')">
+      </td>
+      <td>
+        <input type="button" value="2" onclick="display('2')">
+      </td>
+      <td>
+        <input type="button" value="3" onclick="display('3')">
+      </td>
+      <td>
+        <div>
+          <input type="button" value="&divide;" onclick="display('/')" id="function-key">
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="button" value="." onclick="display('.')">
+      </td>
+      <td>
+        <input type="button" value="0" onclick="display('0')">
+      </td>
+      <td>
+        <input type="button" value="=" onclick="calculate()" id="btn">
+      </td>
+      <td>
+        <div>
+          <input type="button" value="&times;" onclick="display('*')" id="function-key">
+        </div>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

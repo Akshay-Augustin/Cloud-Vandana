@@ -3,7 +3,7 @@ Assignment for  Associate Software Engineer,cloud vandana
 
 Calculator Assignment
 
-![Alt text](/calculator.png "Calculator image")
+![Alt text](/public/calculator.png "Calculator image")
 
 Customer Surveyform Assignment
 

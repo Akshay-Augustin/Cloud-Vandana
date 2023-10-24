@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <!-- CSS for the popup -->
+  <style>
+    body{
+      background: linear-gradient(135deg, #71b7e6, #9b59b6);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+    }
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(237, 233, 233, 0.7);
+      z-index: 1;
+    }
+
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color:rgb(6, 6, 6);
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(182, 170, 170, 0.5);
+      z-index: 2;
+      border-radius: 20px;
+      height:300px;
+      width: 400px;
+      font-size: 20px;
+      color: rgb(240, 238, 238); 
+    }
+    #close{
+      background-color: rgb(242, 100, 100);
+      border: none;
+      border-radius: 20px;
+      height:40px;
+      width:90px;
+      font-size:15px;
+    }
+    .main-child{
+      background-color: #fff;
+      padding: 25px 25px 25px 25px;
+      width:321px;
+      height:400px;
+      margin-top:100px;
+    }
+    .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+} 
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <div class="main-child">
+      <div class="title">CUSTOMER SURVEY FORM</div> <br> <br> 
+  <form id="myForm">
+    <div>
+    <label for="firstname">FIRST NAME</label>
+  </div> 
+    <input type="text" id="firstname" name="Firstname" placeholder="Enter your firstname"> 
+    <div> <br>
+    <label for="lastname">LAST NAME</label>
+  </div>
+    <input type="text" id="lastname" name="Lastname"  placeholder="Enter your lastname"> <br> <br>
+    <div>
+    <label for="dob">DOB</label>
+  </div>
+    <input type="date" id="dob"> <br> <br>
+    <div>
+    <label for="country">COUNTRY</label>
+  </div>
+    <select name="Countryname" id="country">
+      <option value="">Choose</option>
+      <option value="Afghanistan">Afghanistan</option>
+      <option value="Argentina">Argentina</option>
+      <!-- Add more countries here -->
+    </select> <br> <br>
+    <div>
+    <label for="gender">GENDER</label>
+  </div>
+    <input type="checkbox" name="Gender" value="Male" id="male" onchange="uncheckOthers('male')">
+    <label for="male">Male</label>
+    <input type="checkbox" name="Gender" value="Female" id="female" onchange="uncheckOthers('female')">
+    <label for="female">Female</label>
+    <input type="checkbox" name="Gender" value="Others" id="others" onchange="uncheckOthers('others')">
+    <label for="others">Others</label> <br> <br>
+    <div>
+    <label for="profession">PROFESSION</label>
+  </div>
+    <input type="text" id="profession" name="Profession"> <br> <br>
+    
+    <label for="email">EMAIL</label>
+    <input type="email" id="email" name="Email"> <br> <br>
+    <label for="mobile">MOBILE:</label>
+    <input type="tel" id="mobile" name="Mobile No" pattern="[0-9]{10}" placeholder="Enter 10-digit Mobile No" required maxlength="10"> <br> <br>
+
+    <button type="button" id="submitBtn" onclick="openPopup()">Submit</button>
+    <button type="button" id="resetBtn" onclick="resetForm()">Reset</button>
+  </form>
+</div>
+</div>
+
+  <div class="overlay" id="popupOverlay">
+    <div class="popup" id="popupContent">
+      <h2>Selected Values</h2>
+      <pre id="popupMessage"></pre>
+      <button type="button" onclick="closePopup()" id="close">Close</button>
+    </div>
+  </div>
+
+  <script>
+    function uncheckOthers(id) {
+      const checkboxes = document.querySelectorAll('input[type="checkbox"][name="gender"]');
+      checkboxes.forEach(checkbox => {
+        if (checkbox.id !== id) {
+          checkbox.checked = false;
+        }
+      });
+    }
+
+    function openPopup() {
+      const form = document.getElementById('myForm');
+      const formData = new FormData(form);
+      let message = '';
+
+      formData.forEach((value, key) => {
+        message += key + ': ' + value + '\n';
+      });
+
+      const popupMessage = document.getElementById('popupMessage');
+      popupMessage.textContent = message;
+
+      const popupOverlay = document.getElementById('popupOverlay');
+      popupOverlay.style.display = 'block';
+    }
+
+    function closePopup() {
+      const popupOverlay = document.getElementById('popupOverlay');
+      popupOverlay.style.display = 'none';
+    }
+
+    function resetForm() {
+      const form = document.getElementById('myForm');
+      form.reset();
+    }
+  </script>
+</body>
+</html>

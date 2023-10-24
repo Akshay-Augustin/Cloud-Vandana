@@ -1,0 +1,56 @@
+
+.calculator {
+  padding: 10px;
+  border-radius: 1em;
+  height: 380px;
+  width: 400px;
+  margin: auto;
+  background-color:black;
+}
+  .display-box {
+    font-family: 'Orbitron', sans-serif;
+    background-color:white;
+    border:none solid;
+   
+    color: black;
+    border-radius: 5px;
+    width: 100%;
+    height: 65%;
+}
+.ac{
+  background-color: rgb(66, 219, 168) !important;
+  
+}
+input[type=button] {
+  font-family: 'Orbitron', sans-serif;
+  background-color:black;
+  color: white;
+  border: solid black 0.5px;
+  width: 100%;
+  border-radius: 5px;
+  height: 70%;
+  outline: none;
+}
+input:active[type=button] {
+  background-color: rgb(136, 141, 139);
+  opacity:1;
+  transition:-5;
+}
+/* calculator.css */
+.operation-button {
+
+  color: rgb(193, 6, 6); /* You can adjust the text color as needed */
+}
+
+input[id="function-key"]{
+
+ border: none;
+ padding-left: 10px 10px 10px 10px;
+ height:20px;
+  background-color: gray;
+  cursor: pointer;
+}
+
+div{
+  background-color: zyy;
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Customer survey form</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./formorg.css">
+  <script src="formorg.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="title">CUSTOMER SURVEY FORM</div>
+    <div class="content">
+      <form id="myForm">
+        <div class="user-details">
+          <!-- Your existing form inputs here -->
+          <div class="input-box">
+            <span class="details">FIRST NAME</span>
+            <input type="text" name="FIRST NAME" value="" required>
+          </div>
+          <div class="input-box">
+            <span class="details">LASTNAME</span>
+            <input type="text" name="LASTNAME" required>
+          </div>
+          <div class="input-box">
+            <span class="details">DATE OF BIRTH</span>
+            <input type="date" name="DATE OF BIRTH" required>
+          </div>
+          <div class="input-box">
+            <span class="details">COUNTRY</span>
+            <select name="COUNTRY" id="country" required>
+              <option value="Select">Select a country...</option>
+              <option value="Afghanistan">Afghanistan</option>
+              <option value="Argentina">Argentina</option>
+              <option value="Australia">Australia</option>
+              <option value="Bangladesh">Bangladesh</option>
+              <option value="Belgium">Belgium</option>
+              <option value="Canada">Canada</option>
+              <option value="Egypt">Egypt</option>
+              <option value="France">France</option>
+              <option value="Germany">Germany</option>
+              <option value="Iceland">Iceland</option>
+              <option value="India">India</option>
+              <option value="Switzerland">Switzerland</option>
+            </select>
+          </div>
+          <div class="gender-box">
+            <span class="details">GENDER</span>
+            <input type="checkbox" name="GENDER" value="Male" id="male" onchange="uncheckOthers('male')" >
+            <label for="male">Male</label>
+          
+            <input type="checkbox" name="GENDER" value="Female" id="female" onchange="uncheckOthers('female')" >
+            <label for="female">Female</label>
+          
+            <input type="checkbox" name="GENDER" value="Others" id="others" onchange="uncheckOthers('others')">
+            <label for="others">Others</label>
+          </div>
+          
+          
+          <div class="input-box">
+            <span class="details">PROFESSION</span>
+            <input type="text" name="PROFESSION" required>
+          </div>
+          <div class="input-box">
+            <span class="details">E-mail</span>
+            <input type="email" name="E-mail" required>
+          </div>
+          <div class="input-box">
+            <span class="details">MOBILE NUMBER</span>
+            <input type="tel" name="MOBILE NUMBER" maxlength="10" required>
+          </div>
+        </div>
+        <div class="button">
+          <input type="button" value="SUBMIT" onclick="validateFormAndOpenPopup()">
+        </div>
+        <div class="button">
+          <input type="button" value="RESET" onclick="resetForm()">
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="overlay" id="popupOverlay">
+    <div class="popup" id="popupContent">
+      <img src="./greentick.jpg" alt="greentick"> <br>
+      <i>Your Details Has been Successfully Submitted</i>
+      <hr>
+      <h2>Selected Values</h2>
+      <pre id="popupMessage"></pre>
+      <hr> <br>
+      <button type="button" onclick="closePopupAndResetForm()" id="popup-button">Close</button>
+    </div>
+  </div>
+</body>
+</html>

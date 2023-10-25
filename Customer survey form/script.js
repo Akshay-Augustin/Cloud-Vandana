@@ -49,35 +49,4 @@ function uncheckOthers(checkboxId) {
   });
 }
 
-    function validateFormAndOpenPopup() {
-      const form = document.getElementById('myForm');
-      if (form.checkValidity()) {
-        const formData = new FormData(form);
-        let message = '';
-
-        formData.forEach((value, key) => {
-          message += key + ': ' + value + '\n';
-        });
-
-        const popupMessage = document.getElementById('popupMessage');
-        popupMessage.textContent = message;
-
-        const popupOverlay = document.getElementById('popupOverlay');
-        popupOverlay.style.display = 'block';
-      } else {
-        alert('Please fill in all required fields inorder to submit the form');
-      }
-    }
-
-    function closePopupAndResetForm() {
-      const popupOverlay = document.getElementById('popupOverlay');
-      popupOverlay.style.display = 'none';
-
-      const form = document.getElementById('myForm');
-      form.reset();
-    }
-
-    function resetForm() {
-      const form = document.getElementById('myForm');
-      form.reset();
-    }
+    

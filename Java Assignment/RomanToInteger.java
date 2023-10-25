@@ -55,7 +55,7 @@ public class RomanToInteger {
 
 	        System.out.print("Enter a Roman Numeral: ");
 	        
-	        String romanNumeral = scanner.nextLine().toUpperCase(); // Convert to uppercase for consistency.
+	        String romanNumeral = scanner.nextLine().toUpperCase(); 
 	        int result = romanToInteger(romanNumeral);
 
 	        if (result != -1) 

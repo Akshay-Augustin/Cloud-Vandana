@@ -162,7 +162,7 @@ form .user-details .input-box{
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   z-index: 2;
 }
-   /* Add styles for the popup */
+   
    .overlay {
     display: none;
     position: fixed;
